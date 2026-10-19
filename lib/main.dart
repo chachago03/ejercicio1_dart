@@ -24,8 +24,19 @@ void main() {
 
     switch (opcion) {
       case '1':
-        // La funcionalidad de agregar se implementará
-        break;
+  stdout.write('Ingrese el nombre: ');
+  String nombre = stdin.readLineSync() ?? '';
+
+  stdout.write('Ingrese el teléfono: ');
+  String telefono = stdin.readLineSync() ?? '';
+
+  if (nombre.trim().isEmpty || telefono.trim().isEmpty) {
+    print('El nombre y el teléfono son obligatorios.');
+  } else {
+    agenda.add(Contacto(nombre.trim(), telefono.trim()));
+    print('Contacto agregado correctamente.');
+  }
+  break;
       case '2':
         // La funcionalidad de listar se implementará
         break;
